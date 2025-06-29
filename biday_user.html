@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #6F4E37;
+            --secondary: #C4A484;
+            --accent: #E6B325;
+            --dark: #3E2723;
+            --light: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f5f0;
+            color: var(--dark);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-fade {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-[#6F4E37] to-[#3E2723] text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-mug-hot text-2xl text-[#6F4E37]"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold">Biday</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-xl cursor-pointer"></i>
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-xs flex items-center justify-center">3</span>
+                    </div>
+                    <div class="w-10 h-10 bg-white rounded-full overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 mb-4">
+                <h2 class="text-xl font-medium">Welcome back, Sarah!</h2>
+                <p class="text-[#C4A484]">Your coffee journey continues</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mt-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm text-[#C4A484]">Your balance</p>
+                        <p class="text-2xl font-bold">1,250 <span class="text-[#E6B325]">pts</span></p>
+                    </div>
+                    <div class="w-16 h-16 bg-[#E6B325] rounded-full flex items-center justify-center shadow-lg pulse">
+                        <i class="fas fa-coins text-2xl text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 mt-6">
+        <!-- Special Suggestions -->
+        <section class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-[#3E2723]">Special Suggestions</h2>
+                <a href="#" class="text-sm text-[#6F4E37] font-medium">See all</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-[#6F4E37]/10 to-white rounded-xl p-5 shadow-md card animate-fade relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-[#6F4E37]/5 rounded-full"></div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                            <i class="fas fa-seedling text-2xl text-[#6F4E37]"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg">New Organic Blend</h3>
+                            <p class="text-sm text-gray-600 mb-3">Try our new ethically sourced coffee blend</p>
+                            <div class="flex justify-between items-center">
+                                <span class="bg-[#E6B325]/10 text-[#E6B325] text-xs px-3 py-1.5 rounded-full font-medium">+50 pts</span>
+                                <button class="text-xs font-medium text-[#6F4E37] bg-white px-3 py-1.5 rounded-full shadow-sm hover:bg-[#6F4E37] hover:text-white transition">Try Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-[#E6B325]/10 to-white rounded-xl p-5 shadow-md card animate-fade relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-[#E6B325]/5 rounded-full"></div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                            <i class="fas fa-cookie text-2xl text-[#6F4E37]"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg">Cookie Pairing</h3>
+                            <p class="text-sm text-gray-600 mb-3">Perfect match for your afternoon latte</p>
+                            <div class="flex justify-between items-center">
+                                <span class="bg-[#6F4E37]/10 text-[#6F4E37] text-xs px-3 py-1.5 rounded-full font-medium">+30 pts</span>
+                                <button class="text-xs font-medium text-[#6F4E37] bg-white px-3 py-1.5 rounded-full shadow-sm hover:bg-[#6F4E37] hover:text-white transition">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Promo Codes -->
+        <section class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-[#3E2723]">Active Promos</h2>
+                <a href="#" class="text-sm text-[#6F4E37] font-medium">View history</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gradient-to-r from-[#6F4E37] to-[#3E2723] text-white rounded-xl p-4 shadow-lg card">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xs uppercase tracking-wider">Discount</p>
+                            <h3 class="font-bold text-lg">COZY20</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-percentage text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-90">20% off all hot drinks</p>
+                    <div class="mt-4 pt-2 border-t border-white/20">
+                        <p class="text-xs">Expires in 2 days</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-[#E6B325] to-[#d4a017] text-white rounded-xl p-4 shadow-lg card">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xs uppercase tracking-wider">Bonus</p>
+                            <h3 class="font-bold text-lg">FRIYAY</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-gift text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-90">Free pastry with any drink</p>
+                    <div class="mt-4 pt-2 border-t border-white/20">
+                        <p class="text-xs">Today only</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-[#C4A484] to-[#a78a6d] text-white rounded-xl p-4 shadow-lg card">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xs uppercase tracking-wider">Points</p>
+                            <h3 class="font-bold text-lg">DOUBLE</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bolt text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-2 opacity-90">Double points this weekend</p>
+                    <div class="mt-4 pt-2 border-t border-white/20">
+                        <p class="text-xs">Sat-Sun</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Purchase Tracker -->
+        <section class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-[#3E2723]">Your Coffee Journey</h2>
+                <a href="#" class="text-sm text-[#6F4E37] font-medium">Details</a>
+            </div>
+            
+            <div class="bg-white rounded-xl p-6 shadow-md card">
+                <div class="mb-4">
+                    <div class="flex justify-between mb-1">
+                        <span class="text-sm font-medium">Free drink progress</span>
+                        <span class="text-sm font-medium">8/10</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-[#6F4E37] h-2.5 rounded-full progress-bar" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="p-2">
+                        <p class="text-2xl font-bold text-[#6F4E37]">24</p>
+                        <p class="text-xs text-gray-500">Cups this month</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-2xl font-bold text-[#6F4E37]">5</p>
+                        <p class="text-xs text-gray-500">Favorite drinks</p>
+                    </div>
+                    <div class="p-2">
+                        <p class="text-2xl font-bold text-[#6F4E37]">87%</p>
+                        <p class="text-xs text-gray-500">Regularity</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                    <p class="text-sm text-center text-gray-600">You're saving $3.20 per week with your membership</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Challenges -->
+        <section class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-[#3E2723]">Weekly Challenges</h2>
+                <a href="#" class="text-sm text-[#6F4E37] font-medium">All challenges</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl p-4 shadow-md card">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-12 h-12 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
+                                <i class="fas fa-trophy text-xl text-[#E6B325]"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Early Bird</h3>
+                                <p class="text-sm text-gray-600">Visit before 9 AM 3 times this week</p>
+                            </div>
+                        </div>
+                        <div class="bg-[#E6B325]/10 px-3 py-1 rounded-full">
+                            <span class="text-[#E6B325] text-sm font-medium">+150 pts</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1">
+                            <span>Progress</span>
+                            <span>1/3</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-[#E6B325] h-2 rounded-full" style="width: 33%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-4 shadow-md card">
+                    <div class="flex items-start justify-between">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-12 h-12 bg-[#F5F5F5] rounded-lg flex items-center justify-center">
+                                <i class="fas fa-mug-hot text-xl text-[#6F4E37]"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Variety Seeker</h3>
+                                <p class="text-sm text-gray-600">Try 5 different drinks this week</p>
+                            </div>
+                        </div>
+                        <div class="bg-[#E6B325]/10 px-3 py-1 rounded-full">
+                            <span class="text-[#E6B325] text-sm font-medium">+200 pts</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <div class="flex justify-between text-xs text-gray-500 mb-1">
+                            <span>Progress</span>
+                            <span>3/5</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-[#6F4E37] h-2 rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Info & Rewards -->
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-[#3E2723] mb-4">Your Rewards</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Cashback -->
+                <div class="bg-white rounded-xl p-4 shadow-md card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-10 h-10 bg-[#6F4E37]/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-money-bill-wave text-[#6F4E37]"></i>
+                        </div>
+                        <h3 class="font-bold">Cashback</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Earn 5% cashback on every purchase</p>
+                    <div class="bg-[#F5F5F5] p-3 rounded-lg">
+                        <p class="text-sm font-medium">Available: <span class="text-[#6F4E37]">$8.75</span></p>
+                    </div>
+                </div>
+                
+                <!-- Bonus -->
+                <div class="bg-white rounded-xl p-4 shadow-md card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-10 h-10 bg-[#E6B325]/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-star text-[#E6B325]"></i>
+                        </div>
+                        <h3 class="font-bold">Bonus</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Exclusive offers for loyal customers</p>
+                    <div class="bg-[#F5F5F5] p-3 rounded-lg">
+                        <p class="text-sm font-medium">2 unclaimed bonuses</p>
+                    </div>
+                </div>
+                
+                <!-- Info -->
+                <div class="bg-white rounded-xl p-4 shadow-md card">
+                    <div class="flex items-center space-x-3 mb-3">
+                        <div class="w-10 h-10 bg-[#C4A484]/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-info-circle text-[#C4A484]"></i>
+                        </div>
+                        <h3 class="font-bold">Coffee Facts</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Did you know? Our beans are shade-grown</p>
+                    <div class="bg-[#F5F5F5] p-3 rounded-lg">
+                        <p class="text-sm font-medium">New fact every week!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Actions -->
+        <section class="mb-8">
+            <h2 class="text-xl font-bold text-[#3E2723] mb-4">Quick Actions</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <button class="bg-white rounded-xl p-4 shadow-md flex flex-col items-center justify-center card">
+                    <div class="w-10 h-10 bg-[#6F4E37]/10 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-qrcode text-[#6F4E37]"></i>
+                    </div>
+                    <span class="text-sm font-medium">Scan to Pay</span>
+                </button>
+                
+                <button class="bg-white rounded-xl p-4 shadow-md flex flex-col items-center justify-center card">
+                    <div class="w-10 h-10 bg-[#E6B325]/10 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-gift text-[#E6B325]"></i>
+                    </div>
+                    <span class="text-sm font-medium">Redeem</span>
+                </button>
+                
+                <button class="bg-white rounded-xl p-4 shadow-md flex flex-col items-center justify-center card">
+                    <div class="w-10 h-10 bg-[#C4A484]/10 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-calendar text-[#C4A484]"></i>
+                    </div>
+                    <span class="text-sm font-medium">Reserve</span>
+                </button>
+                
+                <button class="bg-white rounded-xl p-4 shadow-md flex flex-col items-center justify-center card">
+                    <div class="w-10 h-10 bg-[#3E2723]/10 rounded-full flex items-center justify-center mb-2">
+                        <i class="fas fa-history text-[#3E2723]"></i>
+                    </div>
+                    <span class="text-sm font-medium">History</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-around">
+                <a href="#" class="py-3 px-4 flex flex-col items-center text-[#6F4E37]">
+                    <i class="fas fa-home text-lg"></i>
+                    <span class="text-xs mt-1">Home</span>
+                </a>
+                <a href="#" class="py-3 px-4 flex flex-col items-center text-gray-400">
+                    <i class="fas fa-coffee text-lg"></i>
+                    <span class="text-xs mt-1">Menu</span>
+                </a>
+                <a href="#" class="py-3 px-4 flex flex-col items-center text-gray-400">
+                    <i class="fas fa-trophy text-lg"></i>
+                    <span class="text-xs mt-1">Rewards</span>
+                </a>
+                <a href="#" class="py-3 px-4 flex flex-col items-center text-gray-400">
+                    <i class="fas fa-user text-lg"></i>
+                    <span class="text-xs mt-1">Profile</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Simple animation triggers
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach((card, index) => {
+                // Add delay to each card's animation
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Simulate loading progress bars
+            setTimeout(() => {
+                const progressBars = document.querySelectorAll('.progress-bar');
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }, 500);
+            
+            // Pulse animation for bonus coins
+            const bonusCoin = document.querySelector('.pulse');
+            setInterval(() => {
+                bonusCoin.classList.toggle('pulse');
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
